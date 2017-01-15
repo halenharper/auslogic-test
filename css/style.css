@@ -1,0 +1,39 @@
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+}
+
+#form-name {
+    margin-top: -30px;
+}
+
+#form-name span {
+    padding: 0 5px 0 5px;
+    background:white;
+    color: deepskyblue;
+}
+
+#option-name {
+    font-weight: 600;
+    margin: 10px 0 20px 0;
+}
+
+#action-form {
+    margin:0 auto;
+    padding: 20px;
+    width: 300px;
+    height: 245px;
+    border: 2px solid #eeeeee;
+    border-radius: 10px;
+}
+
+#action-form p {
+    margin-left: 30px;
+}
+
+#action-form button {
+    padding: 5px;
+}

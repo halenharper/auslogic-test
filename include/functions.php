@@ -34,6 +34,32 @@ function store_data($link, $phone, $email)
 }
 
 /**
+ * Mail data to user
+ * @param $link
+ * @param $email
+ */
+function mail_data($link, $email)
+{
+	if (!$email){
+		return return_back();
+	}
+	$email = clear_data($email);
+	$recipient = $email;
+	$email = crypt($email, SALT);
+
+	$q = "SELECT phone FROM users WHERE email='$email'";
+
+	$result = mysqli_query($link, $q);
+
+	if(mysqli_num_rows($result)){
+		$row = mysqli_fetch_row($result);
+		mail($recipient, 'Your phone', 'Your phone number is: ' . decrypt_phone($row[0]));
+	}
+
+	return return_back();
+}
+
+/**
  * Return back if data is empty
  */
 function return_back()
